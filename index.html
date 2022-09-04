@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>XPNostalgia | Real time chat</title>   
+    <link rel="stylesheet" href="https://unpkg.com/xp.css" />
+	  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+      body {
+      background-color: #212120;
+      color: white;
+      font-family: arial, sans-serif;
+      }
+      li{
+      color:white;
+      }
+	    .container {
+  border: 2px solid #dedede;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+    </style>
+  </head>
+	
+	<center><img src="banner.png" alt="The Banner"></center><img src="vertical.png" alt="The Banner" style="float:right">
+	<!--<center><img src="gui.png" alt="GUI"></center> -->
+		  <center><h1>Welcome!</h1></center>
+	  <center><p1>Im adding chatrooms soon! Im also searching JavaScript Developers Contact me on discord.</p1></center>
+  <body>      
+  <audio src="msn.mp3" id="audio" controls style="display: none;"></audio>
+    
+	  <div id="chat">     
+	<div id="holder">
+<br>
+<br>
+<div id="holder">
+                      
+        <ul id="messages" style="overflow-y:scroll; height:450px;"></ul>
+
+		  <div id="messageBox"> 
+			  <form id="send-message">
+          <center><input id="chat-txt" type="text"/></center>
+          <center><button id="chat-btn" type="submit" onclick="playAudio();">Submit</button></center>
+				  <script>
+function pageScroll() {
+    window.scrollBy(0,1);
+    scrolldelay = setTimeout(pageScroll,10);
+}
+const pageScroll = () => {
+  window.setInterval(() => {
+
+    // Scroll 10px all 25ms
+    window.scrollBy(0, 10)
+  }, 25)
+}
+	
+				  
+				  </script>
+        </div>
+        </div>
+	
+        </form>      
+		<script>
+		function playAudio() {
+			document.getElementById("audio").play();
+		}
+		</script>
+    </div>   
+
+	
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+    <script src="script.js"></script>   
+
+
+  </body>
+</html>
