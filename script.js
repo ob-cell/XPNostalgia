@@ -14,7 +14,10 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
-const username = prompt("Hello and welcome! What's your nickname?");
+const username = document.getElementById("usernamebtn").onclick = function(){
+    username = document.getElementById("username").value;
+    document.getElementById("usernameshow").innerHTML = "Welcome back, " + username
+}
 
 document.getElementById("send-message").addEventListener("submit", postChat);
 function postChat(e) {
