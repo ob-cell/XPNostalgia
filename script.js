@@ -14,7 +14,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
-const username = document.getElementById("usernamebtn").onclick = function(){
+const username;
+document.getElementById("usernamebtn").onclick = function(){
     username = document.getElementById("username").value;
     document.getElementById("usernameshow").innerHTML = "Welcome back, " + username
 }
