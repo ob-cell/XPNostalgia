@@ -1,55 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>XPNostalgia | Real time chat</title>   
-    <link rel="stylesheet" href="https://unpkg.com/xp.css" />
-	  <link rel="icon" type="image/x-icon" href="/f.ico">
-	    <meta content="XPNostalgia" property="og:title" />
-    <meta content="XPNostalgia Experiance,  A real time Chat. Chat with people around the world! 10+ Active users (XPNostalgia Experiance VER 0.001)" property="og:description" />
-    <meta content="https://seniorjack.cf" property="og:url" />
-    <meta content="https://www.xpnostalgia.gq/banner.png" property="og:image" />
-    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
-         
-    <style>
-      body {
-      background-color: #212120;
-      color: white;
-      font-family: arial, sans-serif;
-      }
-      li{
-      color:white;
-      }
-	    .container {
-  border: 2px solid #dedede;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px 0;
-}
-
-    </style>
-  </head>
-	
-	<center><img src="banner.png" alt="The Banner"></center><img src="vertical.png" alt="The Banner" style="float:right">
-	<!--<center><img src="gui.png" alt="GUI"></center> -->
-	  
-	
-		  <a href="https://www.hitwebcounter.com" target="_blank">
-<center><a href="https://www.hitwebcounter.com" target="_blank">
-<img src="https://hitwebcounter.com/counter/counter.php?page=8034702&style=0001&nbdigits=5&type=page&initCount=0" title="People Online" Alt="Online people right now"   border="0" /></a></center> 
-  <body>      
-  <audio src="msn.mp3" id="audio" controls style="display: none;"></audio>
- 
-	
-        <div id="chat"> <!-- messages will display here --> <ul id="messages"></ul> <!-- form to send message --> <form id="message-form"> <input id="message-input" type="text" /> <button id="message-btn" type="submit">Send</button> </form> </div>
-
-
-	
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
-    <script src="script.js"></script>   
-
-
-  </body>
+<html lang="en"> 
+<head> <meta charset="UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+<title>Firebase RealTime Chat</title> 
+<link rel="stylesheet" href="./index.css">
+ </head>
+ <body> 
+<header> 
+<h2>XPNostalgia | Real Time Chat</h2> 
+</header> 
+<div id="chat"> 
+<!-- messages will display here -->
+ <ul id="messages"></ul> 
+<!-- form to send message --> 
+<form id="message-form"> 
+<input id="message-input" type="text" /> 
+<button id="message-btn" type="submit">Send</button> 
+</form> </div> <!-- scripts --> 
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+ <script src="index.js"></script> 
+</body>
 </html>
