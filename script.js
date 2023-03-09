@@ -14,61 +14,15 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
-const username = prompt("What's your username")
-
-document.getElementById("send-message").addEventListener("submit", postChat);
-function postChat(e) {
-  e.preventDefault();
-  const timestamp = Date.now();
-  const chatTxt = document.getElementById("chat-txt");
-  const message = chatTxt.value;
-  chatTxt.value = "";
-  db.ref("messages/" + timestamp).set({
-    usr: username,
-    msg: message,
-  });
-}
-
-const fetchChat = db.ref("messages/");
-fetchChat.on("child_added", function (snapshot) {
-  const messages = snapshot.val();
-  const msg = "<li>" + messages.usr + " : " + messages.msg + "</li>";
-  document.getElementById("messages").innerHTML += msg;
-});
-
-const countEl = document.getElementById('count');
-
-updateVisitCount();
-
-function updateVisitCount() {
-	fetch('https://api.countapi.xyz/update/florin-popcom/codepen/?amount=1')
-	.then(res => res.json())
-	.then(res => {
-		countEl.innerHTML = res.value;
-	})
-}
+firebase.initializeApp(firebaseConfig); 
+// initialize databaseconst db = firebase.database();
+ // get user's dataconst username = prompt("Please Tell Us Your Name"); 
+// submit form// listen for submit event on the form and call the postChat functiondocument.getElementById("message-form").addEventListener("submit", sendMessage); 
+// send message to dbfunction sendMessage(e) { e.preventDefault(); // get values to be submitted const timestamp = Date.now();
+ const messageInput = document.getElementById("message-input"); const message = messageInput.value; 
+// clear the input box messageInput.value = ""; //auto scroll to bottom document .getElementById("messages") .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" }); 
+// create db collection and send in the data db.ref("messages/" + timestamp).set({ username, message, });} // display the messages// reference the collection created earlierconst fetchChat = db.ref("messages/"); // check for new messages using the onChildAdded event listenerfetchChat.on("child_added", function (snapshot) { const messages = snapshot.val(); const message = `<li class=${ username === messages.username ? "sent" : "receive" }><span>${messages.username}: </span>${messages.message}</li>`; // append the message on the page document.getElementById("messages").innerHTML += message;});
 
 
 
 
-
-
-
-
-
-
-
-
-
-// SOCIAL PANEL JS
-const floating_btn = document.querySelector('.floating-btn');
-const close_btn = document.querySelector('.close-btn');
-const social_panel_container = document.querySelector('.social-panel-container');
-
-floating_btn.addEventListener('click', () => {
-	social_panel_container.classList.toggle('visible')
-});
-
-close_btn.addEventListener('click', () => {
-	social_panel_container.classList.remove('visible')
-});
