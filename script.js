@@ -1,14 +1,25 @@
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBqH0SGtaYryrAbeJ5gNQPQqLeaMIB6ie0",
-  authDomain: "theultimatechatbox.firebaseapp.com",
-  databaseURL: "https://theultimatechatbox-default-rtdb.firebaseio.com",
-  projectId: "theultimatechatbox",
-  storageBucket: "theultimatechatbox.appspot.com",
-  messagingSenderId: "862436901788",
-  appId: "1:862436901788:web:33b0a1e352a8d68aecbe59",
-  measurementId: "G-MKPKW85DL3"
+  apiKey: "AIzaSyARmPy0GOPK3n1pGm9HNt0HgMb7dB_VoyI",
+  authDomain: "chat-xpnostalgia.firebaseapp.com",
+  projectId: "chat-xpnostalgia",
+  storageBucket: "chat-xpnostalgia.appspot.com",
+  messagingSenderId: "867195687224",
+  appId: "1:867195687224:web:06dddd443fedcc7c8cb1cd",
+  measurementId: "G-W9636LJ2PH"
 };
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
