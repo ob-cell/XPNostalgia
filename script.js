@@ -26,15 +26,16 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
 firebase.initializeApp(firebaseConfig); 
-// initialize databaseconst db = firebase.database();
+db = firebase.database();
  // get user's dataconst 
 var username = prompt("Please Tell Us Your Name"); 
-// submit form// listen for submit event on the form and call the postChat 
-functiondocument.getElementById("message-form").addEventListener("submit", sendMessage); 
-// 
-send message to dbfunction sendMessage(e) { e.preventDefault(); // get values to be submitted const timestamp = Date.now();
+// submit form
+// listen for submit event on the form and call the postChat 
+document.getElementById("message-form").addEventListener("submit", sendMessage); 
+sendMessage(e) { e.preventDefault(); // get values to be submitted const timestamp = Date.now();
  const messageInput = document.getElementById("message-input"); const message = messageInput.value; 
-// clear the input box messageInput.value = ""; //auto scroll to bottom document .getElementById("messages") .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" }); 
+// clear the input box 
+messageInput.value = ""; //auto scroll to bottom document .getElementById("messages") .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" }); 
 // create db collection and send in the data 
 db.ref("messages/" + timestamp).set({ username, message, });} // display the messages// reference the collection created earlierconst fetchChat = db.ref("messages/"); // check for new messages using the onChildAdded event listenerfetchChat.on("child_added", function (snapshot) { const messages = snapshot.val(); const message = `<li class=${ username === messages.username ? "sent" : "receive" }><span>${messages.username}: </span>${messages.message}</li>`; // append the message on the page document.getElementById("messages").innerHTML += message;});
 
