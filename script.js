@@ -5,7 +5,7 @@ const messageInput = document.querySelector('input[type="text"]');
 
 // Listen for form submit events
 messageForm.addEventListener('submit', (event) => {
-	event.preventDefault();
+	event.preventDefault(); // Prevent the default form submission behavior
 
 	// Get the message text from the input field
 	const message = messageInput.value;
